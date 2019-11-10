@@ -23,3 +23,9 @@ export default {
   })
 };
 </script>
+
+<style>
+* {
+  font-family: "Poppins";
+}
+</style>
