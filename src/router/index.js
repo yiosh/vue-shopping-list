@@ -11,13 +11,27 @@ const routes = [
     component: Dashboard
   },
   {
-    path: "/about",
-    name: "about",
+    path: "/menu",
+    name: "create-menu",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "menu" */ "../views/Menu.vue")
+  },
+  {
+    path: "/menu/:id",
+    name: "view-menu",
+    props: true,
+    component: () => import(/* webpackChunkName: "menu" */ "../views/Menu.vue")
+  },
+  {
+    path: "/recipe",
+    name: "create-recipe",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+      import(/* webpackChunkName: "recipe" */ "../views/Recipe.vue")
   }
 ];
 
